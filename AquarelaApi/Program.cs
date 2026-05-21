@@ -21,6 +21,11 @@ sc = DecryptService.Decrypt(sc);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(sc));
 
+// Mappers
+builder.Services.AddScoped<AquarelaApi.Mappings.ContaMapper>();
+builder.Services.AddScoped<AquarelaApi.Mappings.DividaMapper>();
+builder.Services.AddScoped<AquarelaApi.Mappings.UsuarioMapper>();
+
 // Repositories
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IContaRepository, ContaRepository>();
