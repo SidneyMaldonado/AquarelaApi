@@ -25,17 +25,20 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<AquarelaApi.Mappings.ContaMapper>();
 builder.Services.AddScoped<AquarelaApi.Mappings.DividaMapper>();
 builder.Services.AddScoped<AquarelaApi.Mappings.UsuarioMapper>();
+builder.Services.AddScoped<AquarelaApi.Mappings.AnaliseMapper>();
 
 // Repositories
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IContaRepository, ContaRepository>();
 builder.Services.AddScoped<IDividaRepository, DividaRepository>();
+builder.Services.AddScoped<IAnaliseRepository, AnaliseRepository>();
 
 // UseCases
 builder.Services.AddScoped<LoginUseCase>();
 builder.Services.AddScoped<UsuarioUseCase>();
 builder.Services.AddScoped<ContaUseCase>();
 builder.Services.AddScoped<DividaUseCase>();
+builder.Services.AddScoped<AnaliseUseCase>();
 
 // JWT Authentication
 var jwtKey = builder.Configuration["Jwt:Key"]!;
